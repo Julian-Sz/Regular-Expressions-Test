@@ -12,17 +12,8 @@ def get_email_answers(path):
 def get_sizes(path):
     for line in path:
         clear = line.strip()
-        if re.match(r".*\s([0-9][0-9]\s[MKG]B)", clear):
-            size = re.findall(r".*([0-9][0-9]\s[MKG]B)", clear)
-            print(size)
-        elif re.match(r".*\s([0-9][0-9][0-9]\s[MKG]B)", clear):
-            size = re.findall(r".*([0-9][0-9][0-9]\s[MKG]B)", clear)
-            print(size)
-        elif re.match(r".*\s([0-9]\s[MKG]B)", clear):
-            size = re.findall(r".*([0-9]\s[MKG]B)", clear)
-            print(size)
-        elif re.match(r".*(.\.[0-9][0-9]\s[MKG]B)", clear):
-            size = re.findall(r".*(.\.[0-9][0-9]\s[MKG]B)", clear)
+        if re.match(r"^.*\s(.*\s[MKG]B)$", clear):
+            size = re.findall(r"^.*\s(.*\s[MKG]B)$", clear)
             print(size)
 
 
